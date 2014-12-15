@@ -16,6 +16,8 @@ gem 'rails_12factor', group: :production
 gem 'pry-rails'
 gem 'pry-byebug'
 
+gem 'dotenv-rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
