@@ -6,7 +6,7 @@ class Amazon # no inheritance here bc this class does not connect to Postgres
     secret = ENV['AWS_SECRET_ACCESS_KEY']
     key = "uploads/#{SecureRandom.uuid}"
     expiration = 5.minutes.from_now.utc.strftime('%Y-%m-%dT%H:%M:%S.000Z')
-    max_filesize = 2.megabytes
+    max_filesize = 20.megabytes
     acl = 'public-read'
     sas = '201' # Tells amazon to redirect after success instead of returning xml
     policy = Base64.encode64(
