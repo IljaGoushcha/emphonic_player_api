@@ -9,7 +9,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :volume
       t.integer :fade_start_time
       t.integer :fade_stop_time
-      t.timestamp
+      t.timestamps
     end
   end
 end

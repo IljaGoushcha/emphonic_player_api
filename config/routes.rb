@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  root to: 'playlists#index'
+  get 'amazon/sign_key'
+  resources :playlists
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

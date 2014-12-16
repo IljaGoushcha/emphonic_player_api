@@ -17,18 +17,22 @@ ActiveRecord::Schema.define(version: 20141215231648) do
   enable_extension "plpgsql"
 
   create_table "playlists", force: true do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "songs", force: true do |t|
-    t.string  "url"
-    t.string  "title"
-    t.string  "author"
-    t.string  "album"
-    t.string  "pitch"
-    t.string  "volume"
-    t.integer "fade_start_time"
-    t.integer "fade_stop_time"
+    t.string   "url"
+    t.string   "title"
+    t.string   "author"
+    t.string   "album"
+    t.string   "pitch"
+    t.string   "volume"
+    t.integer  "fade_start_time"
+    t.integer  "fade_stop_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "songs", ["url"], name: "index_songs_on_url", using: :btree
