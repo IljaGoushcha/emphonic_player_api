@@ -5,11 +5,10 @@ class CreateSongs < ActiveRecord::Migration
       t.string :title
       t.string :author
       t.string :album
-      t.integer :pitch
-      t.integer :volume
+      t.string :pitch
+      t.string :volume
       t.integer :fade_start_time
       t.integer :fade_stop_time
-      t.playlist :belongs_to
       t.timestamp
     end
   end
