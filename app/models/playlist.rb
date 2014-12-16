@@ -1,3 +1,4 @@
 class Playlist < ActiveRecord::Base
-  has_many: songs
+  belongs_to :songs_playlists
+  has_many :songs, through: :songs_playlists
 end
