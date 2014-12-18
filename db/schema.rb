@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 20141215231648) do
     t.datetime "updated_at"
   end
 
+  create_table "playlists_songs", id: false, force: true do |t|
+    t.integer "song_id"
+    t.integer "playlist_id"
+  end
+
   create_table "songs", force: true do |t|
     t.string   "url"
     t.string   "title"
@@ -36,10 +41,5 @@ ActiveRecord::Schema.define(version: 20141215231648) do
   end
 
   add_index "songs", ["url"], name: "index_songs_on_url", using: :btree
-
-  create_table "songs_playlists", force: true do |t|
-    t.integer "songs_id"
-    t.integer "playlists_id"
-  end
 
 end
