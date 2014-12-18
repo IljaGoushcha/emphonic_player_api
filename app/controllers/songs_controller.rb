@@ -5,21 +5,19 @@ class SongsController < ApplicationController
     render json: @songs
   end
 
-  # def show
-  #   @image_set = Playlists.find(params[:id]) # {:images => :likes}
-  #   if @image_set
-  #     render json: @image_set, :include => [:comments, :images => {:include => :likes}], status: :created, location: @image_set #
-  #   else
-  #     render json: @image_set.errors, status: :unprocessable_entity
-  #   end
-  # end
+  def show
+    @song = Song.find(params[:id]) # {:images => :likes}
+    if @song
+      render json: @song, status: :created, location: @song
+    else
+      render json: @song.errors, status: :unprocessable_entity
+    end
+  end
 
   def create
 
-    # params = {"song" => params}
-    binding.pry
     @song = Song.new(allowed_params)
-    binding.pry
+
     if @song.save
       render json: @song, status: :created, location: @song
     else
@@ -27,25 +25,25 @@ class SongsController < ApplicationController
     end
   end
 
-  # def update
-  #   @image_set = ImageSet.find(params[:id])
+  def update
+    @song = Song.find(params[:id])
 
-  #   if @image_set.update(allowed_params)
-  #     render json: @image_set, status: :created, location: @image_set
-  #   else
-  #     render json: @image_set.errors, status: :unprocessable_entity
-  #   end
-  # end
+    if @song.update(allowed_params)
+      render json: @song, status: :created, location: @song
+    else
+      render json: @song.errors, status: :unprocessable_entity
+    end
+  end
 
-  # def destroy
-  #   @image_set = ImageSet.find(params[:id])
+  def destroy
+    @song = Song.find(params[:id])
 
-  #   if @image_set.destroy
-  #     render json: @image_set, status: :created, location: @image_set
-  #   else
-  #     render json: @image_set.errors, status: :unprocessable_entity
-  #   end
-  # end
+    if @song.destroy
+      render json: @song, status: :created, location: @song
+    else
+      render json: @song.errors, status: :unprocessable_entity
+    end
+  end
 
 
   private
