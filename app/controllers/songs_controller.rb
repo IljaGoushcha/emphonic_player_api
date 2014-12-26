@@ -17,7 +17,7 @@ class SongsController < ApplicationController
   def create
 
     @song = Song.new(allowed_params)
-
+    binding.pry
     if @song.save
       render json: @song, status: :created, location: @song
     else
