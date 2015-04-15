@@ -17,13 +17,15 @@ class SongsController < ApplicationController
   def create
 
     @song = Song.new(allowed_params)
-
-    # @song = Song.new(allowed_params)
-    # binding.pry
-    # @playlist = Playlist.find_or_create(playlist_params)
-    # @playlist.songs.create(@song)
-
     binding.pry
+    @playlist = Playlist.find_by(name: params[:playlist][:playlist])
+    if @playlist == nil
+      @playlist = Playlist.new(name: params[:playlist][:playlist])
+      @playlist.save
+      # render json: @playlist, status: :created, location: @playlist
+    end
+    binding.pry
+
     if @song.save
       render json: @song, status: :created, location: @song
     else
