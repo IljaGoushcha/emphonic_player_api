@@ -25,12 +25,16 @@ class SongsController < ApplicationController
       # render json: @playlist, status: :created, location: @playlist
     end
 
-
     if @song.save
       render json: @song, status: :created, location: @song
     else
       render json: @song.errors, status: :unprocessable_entity
     end
+
+    binding.pry
+    @playlist_song = PlaylistsSong.new(song_id: @song[:id], playlist_id: @playlist[:id])
+    @playlist_song.save
+    binding.pry
   end
 
   def update
