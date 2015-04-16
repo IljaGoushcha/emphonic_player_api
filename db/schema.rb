@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141215231648) do
 
   create_table "playlists", force: true do |t|
     t.string   "name"
-    t.string   "cell"
+    t.integer  "cell"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -20,7 +20,7 @@ class SongsController < ApplicationController
 
     @playlist = Playlist.find_by(name: params[:playlist][:playlist])
     if @playlist == nil
-      @playlist = Playlist.new(name: params[:playlist][:playlist])
+      @playlist = Playlist.new(name: params[:playlist][:playlist], cell: 3)
       @playlist.save
       # render json: @playlist, status: :created, location: @playlist
     end
@@ -31,10 +31,10 @@ class SongsController < ApplicationController
       render json: @song.errors, status: :unprocessable_entity
     end
 
-    binding.pry
+
     @playlist_song = PlaylistsSong.new(song_id: @song[:id], playlist_id: @playlist[:id])
     @playlist_song.save
-    binding.pry
+
   end
 
   def update
