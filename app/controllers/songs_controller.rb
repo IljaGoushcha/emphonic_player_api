@@ -18,22 +18,21 @@ class SongsController < ApplicationController
 
     @song = Song.new(allowed_params)
 
-    @playlist = Playlist.find_by(name: params[:playlist][:playlist])
-    if @playlist == nil
-      @playlist = Playlist.new(name: params[:playlist][:playlist], cell: 3)
-      @playlist.save
-      # render json: @playlist, status: :created, location: @playlist
-    end
-
     if @song.save
       render json: @song, status: :created, location: @song
     else
       render json: @song.errors, status: :unprocessable_entity
     end
 
+    @playlist = Playlist.find_by(name: params[:playlist][:playlist])
+    if @playlist == nil
+      @playlist = Playlist.new(name: params[:playlist][:playlist], cell: 2)
+      @playlist.save
+      # render json: @playlist, status: :created, location: @playlist
+    end
 
-    @playlist_song = PlaylistsSong.new(song_id: @song[:id], playlist_id: @playlist[:id])
-    @playlist_song.save
+    @connection = Connection.new(song_id: @song[:id], playlist_id: @playlist[:id])
+    @connection.save
 
   end
 

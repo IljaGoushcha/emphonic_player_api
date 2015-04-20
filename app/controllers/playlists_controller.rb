@@ -5,6 +5,16 @@ class PlaylistsController < ApplicationController
     render json: @playlists
   end
 
+  def get_playlist_songs
+    playlist_id = Playlist.find_by(name: params[:name])[:id]
+    connections = Connection.where(playlist_id: playlist_id)
+    playlist_songs = connections.map do |connection|
+      song_id = connection[:song_id]
+      song = Song.find(song_id)
+    end
+    render json: playlist_songs
+  end
+
   def show
     @playlist = Playlist.find(params[:id])
     if @playlist
