@@ -26,7 +26,7 @@ class SongsController < ApplicationController
 
     @playlist = Playlist.find_by(name: params[:playlist][:playlist])
     if @playlist == nil
-      @playlist = Playlist.new(name: params[:playlist][:playlist], cell: 2)
+      @playlist = Playlist.new(name: params[:playlist][:playlist], cell: params[:playlist][:cell])
       @playlist.save
       # render json: @playlist, status: :created, location: @playlist
     end
