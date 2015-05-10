@@ -1,12 +1,12 @@
 Playlist.delete_all
 Song.delete_all
 
-Song.create(url: "0a4bcbff-5c9e-4291-a47e-7743351d4a3e", title: "Obsesion", author: "Aventura", album: "14 x 14", pitch: 0, volume: 100, fade_start_time: 0, fade_stop_time: 0)
-# @song02 = Song.create(url: "Aventura - Obsesion.mp3", title: "Obsesion", author: "Aventura", album: "", pitch: 0, volume: 100, fade_start_time: 0)
-# @song03 = Song.create(url: "Carlos Gardel - Por Una Cabeza.mp3", title: "Por Una Cabeza", author: "Carlos Gardel", album: "", pitch: 0, volume: 100, fade_start_time: 0)
-# @song04 = Song.create(url: "Joe Arroyo - Rebelión.mp3", title: "Rebelion", author: "Joe Arroyo", album: "", pitch: 0, volume: 100, fade_start_time: 0)
-# @song05 = Song.create(url: "Romeo Santos Feat. Usher - Promise.mp3", title: "Promise", author: "Romeo Santos Feat. Usher", album: "", pitch: 0, volume: 100, fade_start_time: 0)
-# @song06 = Song.create(url: "Xtreme - Te Extraño (Bachata Version).mp3", title: "Promise", author: "Romeo Santos Feat. Usher", album: "", pitch: 0, volume: 100, fade_start_time: 0)
+Song.create(amazon_uid: "0a4bcbff-5c9e-4291-a47e-7743351d4a3e", name: "Obsesion", artist: "Aventura", album: "14 x 14", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
+Song.create(amazon_uid: "1ab81824-8def-40f3-a7ed-1525a8406a42", name: "Te Extrano", artist: "Xtreme", album: "Xtreme", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
+Song.create(amazon_uid: "6596b75f-95d9-44de-a02f-5ab9f6c7f4f0", name: "Promise", artist: "Romeo Santos Feat. Usher", album: "Formula Vol.1", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
+Song.create(amazon_uid: "a134e5cf-e09c-4c7f-af0b-07391833c5ad", name: "Rebelion", artist: "Joe Arroyo", album: "Grandes Hits: Joe Arroyo", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
+Song.create(amazon_uid: "dc7bf240-1c4d-4a99-a339-4d166ce3ad31", name: "Por Una Cabeza", artist: "Carlos Gardel", album: "The Very Best", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
+Song.create(amazon_uid: "f34ddbef-670e-4184-ae77-30a55e9762ae", name: "Tango De Roxanne (in the Style of Moulin Rouge) [Karaoke Version]", artist: "Ameritz Spanish Instrumentals", album: "Tango De Roxanne (in the Style of Moulin Rouge) [Karaoke Version] - Single", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
 
 # @playlist01 = Playlist.create(name: "Salsa")
 # @playlist02 = Playlist.create(name: "Bachata")

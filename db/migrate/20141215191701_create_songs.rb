@@ -1,14 +1,14 @@
 class CreateSongs < ActiveRecord::Migration
   def change
     create_table :songs do |t|
-      t.string :url, index: true
-      t.string :title
-      t.string :author
+      t.string :amazon_uid, index: true
+      t.string :name
+      t.string :artist
       t.string :album
       t.string :pitch
       t.string :volume
-      t.integer :fade_start_time
-      t.integer :fade_stop_time
+      t.integer :fade_in_time
+      t.integer :fade_out_time
       t.timestamps
     end
   end

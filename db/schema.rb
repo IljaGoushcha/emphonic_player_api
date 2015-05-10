@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 20150509052803) do
   enable_extension "plpgsql"
 
   create_table "playlists", force: true do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "playlists_cells", force: true do |t|
@@ -31,21 +33,19 @@ ActiveRecord::Schema.define(version: 20150509052803) do
     t.integer "song_id",     null: false
   end
 
-  add_index "playlists_songs", ["playlist_id", "song_id"], name: "index_playlists_songs_on_playlist_id_and_song_id", using: :btree
-
   create_table "songs", force: true do |t|
-    t.string   "url"
-    t.string   "title"
-    t.string   "author"
+    t.string   "amazon_uid"
+    t.string   "name"
+    t.string   "artist"
     t.string   "album"
     t.string   "pitch"
     t.string   "volume"
-    t.integer  "fade_start_time"
-    t.integer  "fade_stop_time"
+    t.integer  "fade_in_time"
+    t.integer  "fade_out_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "songs", ["url"], name: "index_songs_on_url", using: :btree
+  add_index "songs", ["amazon_uid"], name: "index_songs_on_amazon_uid", using: :btree
 
 end

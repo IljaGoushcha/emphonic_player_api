@@ -1,4 +1,4 @@
-class CreatePlaylistsCells < ActiveRecord::Migration
+class CreateCellsPlaylists < ActiveRecord::Migration
   def change
     create_table :playlists_cells do |t|
       t.integer :cell_number
