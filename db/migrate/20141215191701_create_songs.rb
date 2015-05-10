@@ -5,8 +5,8 @@ class CreateSongs < ActiveRecord::Migration
       t.string :name
       t.string :artist
       t.string :album
-      t.string :pitch
-      t.string :volume
+      t.integer :pitch
+      t.integer :volume
       t.integer :fade_in_time
       t.integer :fade_out_time
       t.timestamps

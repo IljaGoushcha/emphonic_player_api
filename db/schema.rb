@@ -22,15 +22,18 @@ ActiveRecord::Schema.define(version: 20150509052803) do
     t.integer "page_number"
   end
 
+  create_table "playlist_songs", force: true do |t|
+    t.integer "playlist_id"
+    t.integer "song_id"
+  end
+
+  add_index "playlist_songs", ["playlist_id"], name: "index_playlist_songs_on_playlist_id", using: :btree
+  add_index "playlist_songs", ["song_id"], name: "index_playlist_songs_on_song_id", using: :btree
+
   create_table "playlists", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "playlists_songs", id: false, force: true do |t|
-    t.integer "playlist_id", null: false
-    t.integer "song_id",     null: false
   end
 
   create_table "songs", force: true do |t|
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 20150509052803) do
     t.string   "name"
     t.string   "artist"
     t.string   "album"
-    t.string   "pitch"
-    t.string   "volume"
+    t.integer  "pitch"
+    t.integer  "volume"
     t.integer  "fade_in_time"
     t.integer  "fade_out_time"
     t.datetime "created_at"

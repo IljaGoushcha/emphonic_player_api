@@ -18,11 +18,12 @@ class PlaylistsController < ApplicationController
   def show
     @playlist = Playlist.find(params[:id])
     if @playlist
-      render json: @playlist, status: :created, location: @playlist
+      render json: @playlist, :include => :songs, status: :created, location: @playlist
     else
       render json: @playlist.errors, status: :unprocessable_entity
     end
   end
+# render json: @image_sets, :include => :images
 
   def create
     @playlist = Playlist.new(allowed_params)
