@@ -1,8 +1,7 @@
 Playlist.delete_all
 Song.delete_all
-Connection.delete_all
 
-# @song01 = Song.create(url: "Ameritz Spanish Instrumentals - Tango De Roxanne (In the Style of Moulin Rouge) [Karaoke Version].mp3", title: "Tango De Roxanne", author: "", album: "Ameritz Spanish Instrumentals", pitch: 0, volume: 100, fade_start_time: 0)
+Song.create(url: "0a4bcbff-5c9e-4291-a47e-7743351d4a3e", title: "Obsesion", author: "Aventura", album: "14 x 14", pitch: 0, volume: 100, fade_start_time: 0, fade_stop_time: 0)
 # @song02 = Song.create(url: "Aventura - Obsesion.mp3", title: "Obsesion", author: "Aventura", album: "", pitch: 0, volume: 100, fade_start_time: 0)
 # @song03 = Song.create(url: "Carlos Gardel - Por Una Cabeza.mp3", title: "Por Una Cabeza", author: "Carlos Gardel", album: "", pitch: 0, volume: 100, fade_start_time: 0)
 # @song04 = Song.create(url: "Joe Arroyo - Rebelión.mp3", title: "Rebelion", author: "Joe Arroyo", album: "", pitch: 0, volume: 100, fade_start_time: 0)
