@@ -16,16 +16,16 @@ ActiveRecord::Schema.define(version: 20150509052803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "playlist_cells", force: true do |t|
+    t.integer "cell_number"
+    t.integer "playlist_id"
+    t.integer "page_number"
+  end
+
   create_table "playlists", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "playlists_cells", force: true do |t|
-    t.integer "cell_number"
-    t.integer "playlist_id"
-    t.integer "page_number"
   end
 
   create_table "playlists_songs", id: false, force: true do |t|

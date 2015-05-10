@@ -1,5 +1,6 @@
-Playlist.delete_all
 Song.delete_all
+Playlist.delete_all
+PlaylistsSong.delete_all
 
 Song.create(amazon_uid: "0a4bcbff-5c9e-4291-a47e-7743351d4a3e", name: "Obsesion", artist: "Aventura", album: "14 x 14", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
 Song.create(amazon_uid: "1ab81824-8def-40f3-a7ed-1525a8406a42", name: "Te Extrano", artist: "Xtreme", album: "Xtreme", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
@@ -8,9 +9,16 @@ Song.create(amazon_uid: "a134e5cf-e09c-4c7f-af0b-07391833c5ad", name: "Rebelion"
 Song.create(amazon_uid: "dc7bf240-1c4d-4a99-a339-4d166ce3ad31", name: "Por Una Cabeza", artist: "Carlos Gardel", album: "The Very Best", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
 Song.create(amazon_uid: "f34ddbef-670e-4184-ae77-30a55e9762ae", name: "Tango De Roxanne (in the Style of Moulin Rouge) [Karaoke Version]", artist: "Ameritz Spanish Instrumentals", album: "Tango De Roxanne (in the Style of Moulin Rouge) [Karaoke Version] - Single", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
 
-# @playlist01 = Playlist.create(name: "Salsa")
-# @playlist02 = Playlist.create(name: "Bachata")
-# @playlist03 = Playlist.create(name: "Tango")
+Playlist.create(name: "Salsa")
+Playlist.create(name: "Bachata")
+Playlist.create(name: "Tango")
+
+PlaylistsSong.create(playlist_id: 1, song_id: 4)
+PlaylistsSong.create(playlist_id: 2, song_id: 1)
+PlaylistsSong.create(playlist_id: 2, song_id: 2)
+PlaylistsSong.create(playlist_id: 2, song_id: 3)
+PlaylistsSong.create(playlist_id: 3, song_id: 5)
+PlaylistsSong.create(playlist_id: 3, song_id: 6)
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
