@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20150509052803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "playlist_cells", force: true do |t|
-    t.integer "cell_number"
+  create_table "playlist_folders", force: true do |t|
+    t.integer "folder_number"
     t.integer "playlist_id"
     t.integer "page_number"
   end

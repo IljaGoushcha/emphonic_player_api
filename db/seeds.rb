@@ -1,7 +1,7 @@
 Song.delete_all
 Playlist.delete_all
 PlaylistSong.delete_all
-PlaylistCell.delete_all
+PlaylistFolder.delete_all
 
 Song.create(amazon_uid: "0a4bcbff-5c9e-4291-a47e-7743351d4a3e", name: "Obsesion", artist: "Aventura", album: "14 x 14", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
 Song.create(amazon_uid: "1ab81824-8def-40f3-a7ed-1525a8406a42", name: "Te Extrano", artist: "Xtreme", album: "Xtreme", pitch: 0, volume: 100, fade_in_time: 0, fade_out_time: 0)
@@ -21,9 +21,9 @@ PlaylistSong.create(playlist_id: 2, song_id: 3)
 PlaylistSong.create(playlist_id: 3, song_id: 5)
 PlaylistSong.create(playlist_id: 3, song_id: 6)
 
-PlaylistCell.create(cell_number: 1, playlist_id: 2, page_number: 1)
-PlaylistCell.create(cell_number: 7, playlist_id: 3, page_number: 1)
-PlaylistCell.create(cell_number: 26, playlist_id: 2, page_number: 1)
+PlaylistFolder.create(folder_number: 1, playlist_id: 2, page_number: 1)
+PlaylistFolder.create(folder_number: 7, playlist_id: 3, page_number: 1)
+PlaylistFolder.create(folder_number: 26, playlist_id: 2, page_number: 1)
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).

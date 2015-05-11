@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'playlists/get_playlist_songs/:name' => 'playlists#get_playlist_songs'
   resources :songs
   resources :playlists
-  resources :playlist_cells
+  resources :playlist_folders
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
