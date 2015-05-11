@@ -8,7 +8,7 @@ class PlaylistCellsController < ApplicationController
   def show
     @playlist_cell = PlaylistCell.find(params[:id])
     if @playlist_cell
-      render json: @playlist_cell, :include => :playlist, status: :created, location: @playlist_cell
+      render json: @playlist_cell, :include => [:playlist => {:include => :songs}], status: :created, location: @playlist_cell
     else
       render json: @playlist_cell.errors, status: :unprocessable_entity
     end
