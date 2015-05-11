@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150509052803) do
   create_table "playlist_songs", force: true do |t|
     t.integer "playlist_id"
     t.integer "song_id"
+    t.integer "cell_number"
   end
 
   add_index "playlist_songs", ["playlist_id"], name: "index_playlist_songs_on_playlist_id", using: :btree

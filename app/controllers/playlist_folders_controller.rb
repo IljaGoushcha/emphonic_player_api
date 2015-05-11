@@ -1,7 +1,7 @@
 class PlaylistFoldersController < ApplicationController
 
   def index
-    @playlist_folders = PlaylistFolder.order_folders
+    @playlist_folders = PlaylistFolder.order_and_fill_playlist_folders
     render json: @playlist_folders, :include => [:playlist => {:include => :songs}]
   end
 

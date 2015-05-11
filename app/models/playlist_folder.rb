@@ -1,7 +1,7 @@
 class PlaylistFolder < ActiveRecord::Base
   belongs_to :playlist
 
-  def self.order_folders
+  def self.order_and_fill_playlist_folders
     ordered_folders = PlaylistFolder.all.order(folder_number: :asc)
     last_folder_number = ordered_folders.last.folder_number
     max_number_folders = (1+last_folder_number/30)*30
