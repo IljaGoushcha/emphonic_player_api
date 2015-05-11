@@ -13,6 +13,7 @@ Song.create(amazon_uid: "f34ddbef-670e-4184-ae77-30a55e9762ae", name: "Tango De 
 Playlist.create(name: "Salsa")
 Playlist.create(name: "Bachata")
 Playlist.create(name: "Tango")
+Playlist.create(name: "Cha Cha")
 
 PlaylistSong.create(playlist_id: 1, song_id: 4)
 PlaylistSong.create(playlist_id: 2, song_id: 1)
@@ -21,9 +22,11 @@ PlaylistSong.create(playlist_id: 2, song_id: 3)
 PlaylistSong.create(playlist_id: 3, song_id: 5)
 PlaylistSong.create(playlist_id: 3, song_id: 6)
 
+PlaylistFolder.create(folder_number: 35, playlist_id: 2, page_number: 2)
 PlaylistFolder.create(folder_number: 1, playlist_id: 2, page_number: 1)
 PlaylistFolder.create(folder_number: 7, playlist_id: 3, page_number: 1)
 PlaylistFolder.create(folder_number: 26, playlist_id: 2, page_number: 1)
+PlaylistFolder.create(folder_number: 5, playlist_id: 4, page_number: 1)
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
