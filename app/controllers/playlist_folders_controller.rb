@@ -2,7 +2,7 @@ class PlaylistFoldersController < ApplicationController
 
   def index
     @playlist_folders = PlaylistFolder.all
-    render json: @playlist_folders
+    render json: @playlist_folders, :include => [:playlist => {:include => :songs}]
   end
 
   def show
