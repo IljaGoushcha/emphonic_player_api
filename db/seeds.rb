@@ -15,7 +15,7 @@ Playlist.create(name: "Bachata")
 Playlist.create(name: "Tango")
 Playlist.create(name: "Cha Cha")
 
-PlaylistSong.create(playlist_id: 1, song_id: 4, cell_number: 16)
+PlaylistSong.create(playlist_id: 1, song_id: 4, cell_number: 17)
 PlaylistSong.create(playlist_id: 1, song_id: 4, cell_number: 1)
 PlaylistSong.create(playlist_id: 2, song_id: 2, cell_number: 10)
 PlaylistSong.create(playlist_id: 2, song_id: 1, cell_number: 1)

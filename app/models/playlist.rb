@@ -5,6 +5,9 @@ class Playlist < ActiveRecord::Base
 
   def self.order_and_fill_playlist_songs(playlist_id)
     ordered_playlist_songs = PlaylistSong.where(playlist_id: playlist_id.to_s).order(cell_number: :asc)
+
+    binding.pry
+
     last_cell_number = ordered_playlist_songs.last.cell_number
     ordered_songs = ordered_playlist_songs.map do |playlist_song|
       Song.find(playlist_song.song_id)
